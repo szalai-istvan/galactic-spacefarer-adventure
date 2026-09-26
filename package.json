@@ -1,0 +1,15 @@
+{
+  "name": "galactic-spacefarer-adventure-system",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Galactic Spacefarer Adventure System",
+  "repository": "TBD",
+  "dependencies": {
+    "@sap/cds": "^7"
+  },
+  "devDependencies": {
+    "sqlite3": "^6.0.1"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  }
+}
