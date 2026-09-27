@@ -1,5 +1,9 @@
 using CosmicService as service from '../../srv/cosmic-service';
 
+annotate service.GalacticSpacefarers with {
+  homePlanetName @readonly @Core.Computed;
+};
+
 annotate service.GalacticSpacefarers with @(
     UI.HeaderInfo                   : {
         TypeName      : 'Galactic Spacefarer',

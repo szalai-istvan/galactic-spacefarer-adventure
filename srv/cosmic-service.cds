@@ -1,4 +1,4 @@
-using { galactic.adventurer as adventurer } from '../db/schema';
+using {galactic.adventurer as adventurer} from '../db/schema';
 
 @path: '/cosmic'
 service CosmicService @(requires: 'authenticated-user') {
@@ -7,14 +7,15 @@ service CosmicService @(requires: 'authenticated-user') {
     {
       grant: '*',
       to   : 'authenticated-user',
-      where: 'originPlanet.name = $user.homePlanet'
-    }
+      where: 'originPlanet.name = $user.homePlanet or originPlanet.name is null'
+    },
   ]
   @odata.draft.enabled
-  entity GalacticSpacefarers as projection on adventurer.GalacticSpacefarers {
-    *,
-    originPlanet.name as homePlanetName,
-    concat(department.name, ' at ', department.faction) as departmentInfo : String,
-    concat('Level ', position.level, ' ', position.title) as positionInfo : String
-  }
+  entity GalacticSpacefarers as
+    projection on adventurer.GalacticSpacefarers {
+      *,
+      originPlanet.name as homePlanetName : String,
+      concat(department.name, ' at ', department.faction) as departmentInfo : String,
+      concat('Level ', position.level, ' ', position.title) as positionInfo : String
+    }
 }
