@@ -5,7 +5,7 @@
   "repository": "TBD",
   "dependencies": {
     "@cap-js/sqlite": "^3.1.1",
-    "@sap/cds": "^10"
+    "@sap/cds": "^10.1.1"
   },
   "devDependencies": {
     "cds-plugin-ui5": "^0.17.0",
@@ -13,7 +13,9 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-galactic-spacefarer": "cds watch --open spacefarers.galacticspacefarer/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "debug": "node --inspect node_modules/@sap/cds/bin/cds.js watch",
+    "watch-galactic-spacefarer": "cds watch --open spacefarers.galacticspacefarer/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-spacefarers-list-ui": "cds watch --open spacefarerslistui/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
@@ -22,14 +24,18 @@
         "users": {
           "armitage": {
             "password": "sprawl",
-            "roles": ["authenticated-user"],
+            "roles": [
+              "authenticated-user"
+            ],
             "attr": {
               "homePlanet": "Earth"
             }
           },
           "hariseldon": {
             "password": "psychohistory",
-            "roles": ["authenticated-user"],
+            "roles": [
+              "authenticated-user"
+            ],
             "attr": {
               "homePlanet": "Trantor"
             }
@@ -48,6 +54,7 @@
     "app/*"
   ],
   "sapux": [
-    "app/galactic-spacefarer"
+    "app/galactic-spacefarer",
+    "app/spacefarers-list-ui"
   ]
 }

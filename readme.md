@@ -1,8 +1,3 @@
-Task 4 – Galactic List Report Fiori Application
-Create a List Report Fiori application that displays a list of all galactic spacefarers with their stardust
-collection status and spacesuit color. Ensure that the application supports sorting, filtering, and pagination
-across the SAP galaxy.
-
 Task 5 – Galactic Object Page Fiori Application
 Extend the Fiori application to include a Cosmic Object Page that provides detailed information about a
 selected spacefarer. This page should allow users to edit cosmic details like stardust collection and

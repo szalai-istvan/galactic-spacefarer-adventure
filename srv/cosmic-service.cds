@@ -10,6 +10,7 @@ service CosmicService @(requires: 'authenticated-user') {
       where: 'originPlanet.name = $user.homePlanet'
     }
   ]
+  @odata.draft.enabled
   entity GalacticSpacefarers as projection on adventurer.GalacticSpacefarers {
     *,
     originPlanet.name as homePlanetName,

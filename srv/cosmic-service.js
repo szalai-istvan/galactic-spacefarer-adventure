@@ -8,7 +8,7 @@ module.exports = cds.service.impl(async function () {
     validateWormholeSkillsAndStardustCollection(req, candidate);
     enhanceWormholeSkillsAndStardustCollection(candidate);
     console.log(`[BEFORE CREATE] Enhanced candidate ${candidate.adventurerName}: ` +
-      `Stardust = \({candidate.stardustCollection}, Skill =\){candidate.wormholeNavigationSkill}`);
+      `Stardust = ${candidate.stardustCollection}, Skill = ${candidate.wormholeNavigationSkill}`);
   });
 
 
@@ -22,8 +22,8 @@ module.exports = cds.service.impl(async function () {
 });
 
 function sendCosmicNotificationEmail(spacefarer) {
-  const recipient = spacefarer.adventurerName;
-  console.log(`Sending welcome email to ${recipient}... Godspeed!`);
+  const recipient = `${spacefarer.ID}@milkywaygalaxy.com`;
+  console.log(`[AFTER CREATE] Sending welcome email to ${recipient}... Godspeed!`);
 }
 
 function validateWormholeSkillsAndStardustCollection(req, candidate) {
