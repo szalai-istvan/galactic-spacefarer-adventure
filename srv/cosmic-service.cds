@@ -1,6 +1,6 @@
 using {galactic.adventurer as adventurer} from '../db/schema';
 
-@path: '/cosmic'
+@path: '/cosmicService'
 service CosmicService @(requires: 'authenticated-user') {
 
   @restrict: [

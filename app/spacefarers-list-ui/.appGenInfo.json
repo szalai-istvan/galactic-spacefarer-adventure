@@ -4,7 +4,7 @@
     "generatorPlatform": "Visual Studio Code",
     "serviceType": "Local CAP",
     "metadataFilename": "",
-    "serviceUrl": "http://localhost:4004/cosmic/",
+    "serviceUrl": "http://localhost:4004/cosmicService/",
     "appName": "spacefarers-list-ui",
     "appTitle": "Galactic Spacefarers List UI",
     "appDescription": "An SAP Fiori application.",

@@ -1,4 +1,3 @@
-//https://cap.cloud.sap/docs/cds/cdl
 namespace galactic.adventurer;
 
 using { cuid } from '@sap/cds/common';
