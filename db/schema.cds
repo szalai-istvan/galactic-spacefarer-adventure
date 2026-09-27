@@ -3,20 +3,14 @@ namespace galactic.adventurer;
 
 using { cuid } from '@sap/cds/common';
 
-entity SpaceAdventurers : cuid {
+entity GalacticSpacefarers : cuid {
   adventurerName           : String(100);
   stardustCollection       : Integer;
   wormholeNavigationSkill  : Integer;
   originPlanet             : Association to Planets;
-  spacesuitColor           : RGB;
+  spacesuitColor           : String(30);
   department               : Association to Departments;
   position                 : Association to Positions;
-}
-
-type RGB {
-  r : UInt8;
-  g : UInt8;
-  b : UInt8;
 }
 
 entity Planets : cuid {
@@ -27,7 +21,7 @@ entity Planets : cuid {
 entity Departments : cuid {
   faction     : String(100);
   name        : String(100);
-  adventurers : Association to many SpaceAdventurers on adventurers.department = $self;
+  adventurers : Association to many GalacticSpacefarers on adventurers.department = $self;
 }
 
 entity Positions : cuid {

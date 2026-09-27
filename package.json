@@ -4,12 +4,50 @@
   "description": "Galactic Spacefarer Adventure System",
   "repository": "TBD",
   "dependencies": {
-    "@sap/cds": "^7"
+    "@cap-js/sqlite": "^3.1.1",
+    "@sap/cds": "^10"
   },
   "devDependencies": {
+    "cds-plugin-ui5": "^0.17.0",
     "sqlite3": "^6.0.1"
   },
   "scripts": {
-    "start": "cds-serve"
-  }
+    "start": "cds-serve",
+    "watch-galactic-spacefarer": "cds watch --open spacefarers.galacticspacefarer/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "armitage": {
+            "password": "sprawl",
+            "roles": ["authenticated-user"],
+            "attr": {
+              "homePlanet": "Earth"
+            }
+          },
+          "hariseldon": {
+            "password": "psychohistory",
+            "roles": ["authenticated-user"],
+            "attr": {
+              "homePlanet": "Trantor"
+            }
+          }
+        }
+      },
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/galactic-spacefarer"
+  ]
 }
